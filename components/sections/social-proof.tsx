@@ -12,8 +12,8 @@ const testimonials = [
     role: "Sends to India monthly",
     initials: "PS",
     rating: 5,
-    text: "My parents receive more money every month since I switched to DattaPay. The rate is genuinely better than my bank, and they see it in their account within minutes.",
-    amount: "Saved $340 this year",
+    text: "My parents receive more money every month since I switched. The rate is genuinely better than my bank, and they see it in minutes.",
+    amount: "Saved $340/year",
     avatarBg: "bg-teal-50 text-teal-600 dark:bg-teal-950/30 dark:text-teal-400",
   },
   {
@@ -21,8 +21,8 @@ const testimonials = [
     role: "Sends to Mexico weekly",
     initials: "CM",
     rating: 5,
-    text: "I send money to my wife every week. Other services eat 4-5% in hidden markups. DattaPay shows the real rate and charges nothing extra — it adds up fast.",
-    amount: "Saved $520 this year",
+    text: "Other services eat 4-5% in hidden markups. DattaPay shows the real rate and charges nothing extra.",
+    amount: "Saved $520/year",
     avatarBg: "bg-purple-50 text-purple-600 dark:bg-purple-950/30 dark:text-purple-400",
   },
   {
@@ -30,43 +30,16 @@ const testimonials = [
     role: "Sends to Pakistan",
     initials: "FA",
     rating: 5,
-    text: "What sold me is the transparency. Before I confirm, I see the exact amount my mother will get — no surprises, no deductions on the other end.",
-    amount: "Saved $280 this year",
+    text: "Before I confirm, I see the exact amount my mother will get — no surprises, no deductions on the other end.",
+    amount: "Saved $280/year",
     avatarBg: "bg-pink-50 text-pink-600 dark:bg-pink-950/30 dark:text-pink-400",
-  },
-  {
-    name: "David Chen",
-    role: "Sends to China",
-    initials: "DC",
-    rating: 5,
-    text: "I was nervous about switching from my bank. DattaPay's 256-bit encryption and instant verification gave me peace of mind. Now I recommend it to everyone.",
-    amount: "Saved $410 this year",
-    avatarBg: "bg-blue-50 text-blue-600 dark:bg-blue-950/30 dark:text-blue-400",
-  },
-  {
-    name: "Maria Santos",
-    role: "Sends to Philippines",
-    initials: "MS",
-    rating: 5,
-    text: "Had a question about a transfer at midnight. Their live chat agent resolved it in 3 minutes. That kind of support is why I stay with DattaPay.",
-    amount: "Saved $190 this year",
-    avatarBg: "bg-green-50 text-green-600 dark:bg-green-950/30 dark:text-green-400",
-  },
-  {
-    name: "James Wilson",
-    role: "Freelancer, receives from US clients",
-    initials: "JW",
-    rating: 5,
-    text: "As a freelancer billing international clients, DattaPay saves me hundreds every month versus wire transfers. The rate difference alone pays for my coffee budget.",
-    amount: "Saved $1,200 this year",
-    avatarBg: "bg-amber-50 text-amber-600 dark:bg-amber-950/30 dark:text-amber-400",
   },
 ];
 
 const stats = [
   { value: "$2B+", label: "Delivered Worldwide", bg: "bg-blue-50 dark:bg-blue-950/30", color: "text-blue-600 dark:text-blue-400" },
   { value: "100K+", label: "Active Senders", bg: "bg-green-50 dark:bg-green-950/30", color: "text-green-600 dark:text-green-400" },
-  { value: "180+", label: "Countries Reached", bg: "bg-purple-50 dark:bg-purple-950/30", color: "text-purple-600 dark:text-purple-400" },
+  { value: "180+", label: "Countries", bg: "bg-purple-50 dark:bg-purple-950/30", color: "text-purple-600 dark:text-purple-400" },
   { value: "4.9\u2605", label: "Average Rating", bg: "bg-amber-50 dark:bg-amber-950/30", color: "text-amber-600 dark:text-amber-400" },
 ];
 
@@ -110,9 +83,6 @@ export function SocialProof() {
                 Real Savings
               </span>
             </h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Hear from senders who switched to DattaPay and never looked back.
-            </p>
           </div>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

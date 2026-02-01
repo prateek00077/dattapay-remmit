@@ -3,14 +3,13 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import { ArrowRight, Shield, Lock, BadgeCheck, RefreshCcw, Globe, Zap } from "lucide-react";
+import { ArrowRight, Shield, Lock, BadgeCheck, Globe, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 
 const trustBadges = [
   { icon: Shield, label: "FinCEN Registered", bg: "bg-blue-50 dark:bg-blue-950/30", color: "text-blue-600 dark:text-blue-400" },
   { icon: Lock, label: "256-bit Encryption", bg: "bg-green-50 dark:bg-green-950/30", color: "text-green-600 dark:text-green-400" },
-  { icon: BadgeCheck, label: "100K+ Happy Senders", bg: "bg-purple-50 dark:bg-purple-950/30", color: "text-purple-600 dark:text-purple-400" },
-  { icon: RefreshCcw, label: "Full Refund Promise", bg: "bg-amber-50 dark:bg-amber-950/30", color: "text-amber-600 dark:text-amber-400" },
+  { icon: BadgeCheck, label: "100K+ Senders", bg: "bg-purple-50 dark:bg-purple-950/30", color: "text-purple-600 dark:text-purple-400" },
 ];
 
 export function Hero() {
@@ -26,7 +25,7 @@ export function Hero() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <Badge variant="secondary" className="mb-6 rounded-full border-border/60 px-4 py-1.5 text-sm font-medium">
               <span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-green-500" />
-              Delivering to 180+ countries worldwide
+              Delivering to 180+ countries
             </Badge>
           </motion.div>
 
@@ -38,7 +37,7 @@ export function Hero() {
           </motion.h1>
 
           <motion.p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}>
-            DattaPay delivers cross-border transfers at Google mid-market rates with zero hidden fees. Funds arrive in minutes — not days. Built for speed, transparency, and trust.
+            Cross-border transfers at Google mid-market rates. No hidden fees. Funds arrive in minutes.
           </motion.p>
 
           <motion.div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}>
@@ -52,7 +51,7 @@ export function Hero() {
             </Button>
           </motion.div>
 
-          <motion.div className="mt-14 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.5 }}>
+          <motion.div className="mt-14 flex flex-wrap items-center justify-center gap-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.5 }}>
             {trustBadges.map((badge, i) => (
               <motion.div key={badge.label} className="flex items-center gap-2.5 rounded-xl border border-border/50 bg-card px-4 py-2.5 shadow-sm" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.3, delay: 0.6 + i * 0.1 }}>
                 <div className={`flex h-8 w-8 items-center justify-center rounded-lg ${badge.bg}`}>
@@ -64,33 +63,58 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* 3-Step Process */}
-        <motion.div className="relative mx-auto mt-20 max-w-5xl" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.7 }}>
-          <div className="overflow-hidden rounded-2xl border border-border/50 bg-card shadow-xl">
-            <div className="border-b bg-gradient-to-r from-primary/5 via-transparent to-primary/5 px-8 py-4">
-              <h3 className="text-center font-semibold">Money in Their Account in 3 Steps</h3>
-              <p className="mt-1 text-center text-sm text-muted-foreground">No paperwork. No branch visits. Just tap, send, done.</p>
-            </div>
-            <div className="p-8 sm:p-12">
-              <div className="relative grid gap-8 md:grid-cols-3">
-                <div className="absolute left-[16.7%] right-[16.7%] top-6 hidden h-px bg-border md:block" />
-                {[
-                  { step: "01", title: "Pick Amount & Country", desc: "Enter how much to send and where — see the live rate instantly", icon: Globe, bg: "bg-blue-50 dark:bg-blue-950/30", color: "text-blue-600 dark:text-blue-400" },
-                  { step: "02", title: "Add Recipient Details", desc: "Enter their bank account, mobile wallet, or cash pickup point", icon: Zap, bg: "bg-amber-50 dark:bg-amber-950/30", color: "text-amber-600 dark:text-amber-400" },
-                  { step: "03", title: "Confirm & Deliver", desc: "Hit send — they get the money in minutes with live tracking", icon: Shield, bg: "bg-green-50 dark:bg-green-950/30", color: "text-green-600 dark:text-green-400" },
-                ].map((s) => (
-                  <div key={s.step} className="relative text-center">
-                    <div className={`relative z-10 mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl ${s.bg}`}>
-                      <span className={`text-lg font-bold ${s.color}`}>{s.step}</span>
-                    </div>
-                    <h4 className="font-semibold">{s.title}</h4>
-                    <p className="mt-1 text-sm text-muted-foreground">{s.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+        {/* 3-Step Process — Vertical Timeline */}
+        <div className="mx-auto mt-20 max-w-3xl">
+          <motion.h3
+            className="mb-12 text-center text-2xl font-bold tracking-tight sm:text-3xl"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            Send Money in{" "}
+            <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">3 Steps</span>
+          </motion.h3>
+
+          <div className="relative">
+            {/* Vertical connector line */}
+            <motion.div
+              className="absolute left-6 top-0 bottom-0 w-px bg-border sm:left-8"
+              initial={{ scaleY: 0 }}
+              whileInView={{ scaleY: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              style={{ transformOrigin: "top" }}
+            />
+
+            {[
+              { step: "01", title: "Pick Amount & Country", desc: "Enter amount and destination — see the live rate instantly.", icon: Globe, bg: "bg-blue-50 dark:bg-blue-950/30", color: "text-blue-600 dark:text-blue-400", ring: "ring-blue-200 dark:ring-blue-900" },
+              { step: "02", title: "Add Recipient", desc: "Bank account, mobile wallet, or cash pickup — your choice.", icon: Zap, bg: "bg-amber-50 dark:bg-amber-950/30", color: "text-amber-600 dark:text-amber-400", ring: "ring-amber-200 dark:ring-amber-900" },
+              { step: "03", title: "Confirm & Deliver", desc: "They get the money in minutes with live tracking.", icon: Shield, bg: "bg-green-50 dark:bg-green-950/30", color: "text-green-600 dark:text-green-400", ring: "ring-green-200 dark:ring-green-900" },
+            ].map((s, i) => (
+              <motion.div
+                key={s.step}
+                className="relative mb-10 flex items-start gap-5 sm:gap-7 last:mb-0"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 + i * 0.2 }}
+              >
+                {/* Step circle */}
+                <div className={`relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full ring-4 ${s.ring} ${s.bg} sm:h-16 sm:w-16`}>
+                  <s.icon className={`h-5 w-5 sm:h-6 sm:w-6 ${s.color}`} />
+                </div>
+
+                {/* Content */}
+                <div className="pt-1 sm:pt-3">
+                  <span className={`text-xs font-bold uppercase tracking-widest ${s.color}`}>Step {s.step}</span>
+                  <h4 className="mt-1 text-lg font-semibold sm:text-xl">{s.title}</h4>
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground sm:text-base">{s.desc}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

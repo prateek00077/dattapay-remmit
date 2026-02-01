@@ -6,12 +6,12 @@ import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 
 const features = [
-  { icon: DollarSign, title: "Zero Transfer Fees", description: "Every dollar you send is a dollar that gets delivered. No service charges, no processing fees, no hidden deductions.", bg: "bg-green-50 dark:bg-green-950/30", color: "text-green-600 dark:text-green-400" },
-  { icon: TrendingUp, title: "Google Mid-Market Rates", description: "We match the real exchange rate — the one banks use between themselves. You save up to 8x compared to traditional wire transfers.", bg: "bg-blue-50 dark:bg-blue-950/30", color: "text-blue-600 dark:text-blue-400" },
-  { icon: Clock, title: "Delivered in Minutes", description: "Most transfers land in the recipient's account within minutes. No more waiting 3-5 business days for your money to arrive.", bg: "bg-amber-50 dark:bg-amber-950/30", color: "text-amber-600 dark:text-amber-400" },
-  { icon: ShieldCheck, title: "Bank-Level Protection", description: "256-bit SSL encryption, two-factor authentication, and biometric login. Your money and data are protected at every step.", bg: "bg-purple-50 dark:bg-purple-950/30", color: "text-purple-600 dark:text-purple-400" },
-  { icon: Smartphone, title: "Transfer From Anywhere", description: "Send from our web app or mobile — no branch visits, no paperwork. Available 24/7, on any device, from any location.", bg: "bg-pink-50 dark:bg-pink-950/30", color: "text-pink-600 dark:text-pink-400" },
-  { icon: Users, title: "Chosen by 100K+ Senders", description: "Over 100,000 customers across 180+ countries trust DattaPay with $2B+ in transfers. Rated 4.9 stars on average.", bg: "bg-teal-50 dark:bg-teal-950/30", color: "text-teal-600 dark:text-teal-400" },
+  { icon: DollarSign, title: "Zero Transfer Fees", description: "Every dollar you send is a dollar delivered. No hidden charges.", bg: "bg-green-50 dark:bg-green-950/30", color: "text-green-600 dark:text-green-400" },
+  { icon: TrendingUp, title: "Google Mid-Market Rates", description: "The real exchange rate — save up to 8x vs traditional banks.", bg: "bg-blue-50 dark:bg-blue-950/30", color: "text-blue-600 dark:text-blue-400" },
+  { icon: Clock, title: "Delivered in Minutes", description: "Most transfers land in minutes, not days.", bg: "bg-amber-50 dark:bg-amber-950/30", color: "text-amber-600 dark:text-amber-400" },
+  { icon: ShieldCheck, title: "Bank-Level Security", description: "256-bit encryption, 2FA, and biometric login.", bg: "bg-purple-50 dark:bg-purple-950/30", color: "text-purple-600 dark:text-purple-400" },
+  { icon: Smartphone, title: "Send From Anywhere", description: "Web and mobile, 24/7, from any device.", bg: "bg-pink-50 dark:bg-pink-950/30", color: "text-pink-600 dark:text-pink-400" },
+  { icon: Users, title: "100K+ Senders Trust Us", description: "180+ countries. $2B+ transferred. 4.9-star rating.", bg: "bg-teal-50 dark:bg-teal-950/30", color: "text-teal-600 dark:text-teal-400" },
 ];
 
 const container = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.1 } } };
@@ -24,10 +24,10 @@ export function FeaturesHighlight() {
         <div className="mx-auto max-w-2xl text-center">
           <Badge variant="secondary" className="mb-4 rounded-full px-4 py-1.5">Why DattaPay</Badge>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-            Designed Around{" "}
+            Built for{" "}
             <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">What Matters</span>
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">Every feature is engineered to maximize the amount delivered — faster, safer, and with full transparency.</p>
+          <p className="mt-4 text-lg text-muted-foreground">Speed, transparency, and maximum value on every transfer.</p>
         </div>
         <motion.div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" variants={container} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-100px" }}>
           {features.map((f) => (
