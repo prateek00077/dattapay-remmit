@@ -58,51 +58,50 @@ function ContactFormContent({ onReset }: { onReset: () => void }) {
       </div>
       <CardContent className="p-6">
         <form action={formAction} className="space-y-6">
-          <div className="grid gap-6 sm:grid-cols-2">
-            <div className="space-y-2">
-              <Label htmlFor="name">Full Name</Label>
-              <Input
-                id="name"
-                name="name"
-                placeholder="John Doe"
-                className={`rounded-xl ${errors.name ? "border-red-500 ring-2 ring-red-500/20" : ""}`}
-              />
-              {errors.name && (
-                <p className="flex items-center gap-1 text-xs text-red-500">
-                  <AlertCircle className="h-3 w-3" />
-                  {errors.name}
-                </p>
-              )}
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="email">Email Address</Label>
-              <Input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="john@example.com"
-                className={`rounded-xl ${errors.email ? "border-red-500 ring-2 ring-red-500/20" : ""}`}
-              />
-              {errors.email && (
-                <p className="flex items-center gap-1 text-xs text-red-500">
-                  <AlertCircle className="h-3 w-3" />
-                  {errors.email}
-                </p>
-              )}
-            </div>
-          </div>
           <div className="space-y-2">
-            <Label htmlFor="subject">Subject</Label>
+            <Label htmlFor="name">Full Name</Label>
             <Input
-              id="subject"
-              name="subject"
-              placeholder="How can we help?"
-              className={`rounded-xl ${errors.subject ? "border-red-500 ring-2 ring-red-500/20" : ""}`}
+              id="name"
+              name="name"
+              placeholder="John Doe"
+              className={`rounded-xl ${errors.name ? "border-red-500 ring-2 ring-red-500/20" : ""}`}
             />
-            {errors.subject && (
+            {errors.name && (
               <p className="flex items-center gap-1 text-xs text-red-500">
                 <AlertCircle className="h-3 w-3" />
-                {errors.subject}
+                {errors.name}
+              </p>
+            )}
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="email">Email Address</Label>
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="john@example.com"
+              className={`rounded-xl ${errors.email ? "border-red-500 ring-2 ring-red-500/20" : ""}`}
+            />
+            {errors.email && (
+              <p className="flex items-center gap-1 text-xs text-red-500">
+                <AlertCircle className="h-3 w-3" />
+                {errors.email}
+              </p>
+            )}
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="whatsapp">WhatsApp Number</Label>
+            <Input
+              id="whatsapp"
+              name="whatsapp"
+              type="tel"
+              placeholder="+1 234 567 8900"
+              className={`rounded-xl ${errors.whatsapp ? "border-red-500 ring-2 ring-red-500/20" : ""}`}
+            />
+            {errors.whatsapp && (
+              <p className="flex items-center gap-1 text-xs text-red-500">
+                <AlertCircle className="h-3 w-3" />
+                {errors.whatsapp}
               </p>
             )}
           </div>
@@ -111,9 +110,9 @@ function ContactFormContent({ onReset }: { onReset: () => void }) {
             <Textarea
               id="message"
               name="message"
-              placeholder="Tell us more..."
+              placeholder="Tell us about your needs..."
               rows={5}
-              className={`resize-none rounded-xl ${errors.message ? "border-red-500 ring-2 ring-red-500/20" : ""}`}
+              className={`rounded-xl ${errors.message ? "border-red-500 ring-2 ring-red-500/20" : ""}`}
             />
             {errors.message && (
               <p className="flex items-center gap-1 text-xs text-red-500">

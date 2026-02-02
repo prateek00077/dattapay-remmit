@@ -11,13 +11,13 @@ export async function submitContactForm(
 ): Promise<ContactFormState> {
   const name = (formData.get("name") as string) ?? "";
   const email = (formData.get("email") as string) ?? "";
-  const subject = (formData.get("subject") as string) ?? "";
+  const whatsapp = (formData.get("whatsapp") as string) ?? "";
   const message = (formData.get("message") as string) ?? "";
 
   const errors: Record<string, string> = {};
   if (name.trim().length < 2) errors.name = "Name must be at least 2 characters";
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.email = "Please enter a valid email";
-  if (subject.trim().length < 3) errors.subject = "Subject is required";
+  if (whatsapp.trim().length < 7) errors.whatsapp = "Please enter a valid WhatsApp number";
   if (message.trim().length < 10) errors.message = "Message must be at least 10 characters";
 
   if (Object.keys(errors).length > 0) {

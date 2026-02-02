@@ -72,7 +72,7 @@ export default function AboutPage() {
                   Banks charge $25-50 per transfer and bury another 3-5% in the exchange rate. We connect directly to payment networks, use the real rate, and pass the savings to you.
                 </p>
                 <p>
-                  Today, DattaPay serves 100,000+ customers across 180+ countries with over $2 billion in transfers processed.
+                  Today, DattaPay serves customers across multiple countries, enabling fast and secure transfers worldwide.
                 </p>
               </div>
             </div>
