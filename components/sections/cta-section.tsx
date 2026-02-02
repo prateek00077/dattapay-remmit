@@ -29,7 +29,7 @@ export function CTASection() {
             </span>
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-            Join 100,000+ senders who chose better rates, zero fees, and delivery in minutes.
+            Join a growing community of senders benefiting from better rates, zero fees, and near-instant delivery.
           </p>
 
           <motion.div

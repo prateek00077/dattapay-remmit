@@ -1,13 +1,12 @@
 import Link from "next/link";
-import { Send, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import Image from "next/image";
+import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
 const footerLinks = {
   Product: [
-    { label: "Features", href: "/features" },
-    { label: "Pricing", href: "/pricing" },
-    { label: "Security", href: "/features" },
-    { label: "Business", href: "/features" },
+    { label: "Security", href: "/about" },
+    { label: "Business", href: "/about" },
   ],
   Company: [
     { label: "About", href: "/about" },
@@ -18,8 +17,8 @@ const footerLinks = {
   Resources: [
     { label: "FAQ", href: "/faq" },
     { label: "Help Center", href: "/faq" },
-    { label: "API Docs", href: "/features" },
-    { label: "Status", href: "/features" },
+    { label: "API Docs", href: "/faq" },
+    { label: "Status", href: "/faq" },
   ],
   Legal: [
     { label: "Terms of Service", href: "/terms" },
@@ -42,16 +41,11 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 py-12 sm:grid-cols-2 lg:grid-cols-5">
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary">
-                <Send className="h-5 w-5 text-primary-foreground" />
-              </div>
-              <span className="text-xl font-bold tracking-tight">
-                Datta<span className="text-primary">Pay</span>
-              </span>
+            <Link href="/" className="flex items-center">
+              <Image src="/logo.png" alt="DattaPay" width={140} height={40} className="h-10 w-auto" />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              Cross-border transfers at the best rates, zero fees, and delivery in minutes. Trusted by 100K+ senders globally.
+              Cross-border transfers at the best rates, zero fees, and delivery in minutes.
             </p>
             <div className="mt-6 flex gap-2">
               {socialLinks.map((social) => (
