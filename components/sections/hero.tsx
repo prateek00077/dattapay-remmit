@@ -45,12 +45,12 @@ export function Hero() {
 
           <motion.div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}>
             <Button size="lg" className="h-12 rounded-full px-8 text-base font-semibold shadow-lg shadow-primary/20" asChild>
-              <Link href="/contact">
+              <Link href="/#contact">
                 Send Your First Transfer <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <Button variant="outline" size="lg" className="h-12 rounded-full px-8 text-base font-semibold" asChild>
-              <Link href="/about">Learn More</Link>
+              <Link href="/#about">Learn More</Link>
             </Button>
           </motion.div>
 

@@ -1,22 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import {
-  ArrowRight,
-  Heart,
-  Target,
-  Shield,
-  Globe,
-} from "lucide-react";
-
-const values = [
-  { icon: Heart, title: "Users First", description: "Every feature exists to help you transfer more, faster, and cheaper.", bg: "bg-pink-50 dark:bg-pink-950/30", color: "text-pink-600 dark:text-pink-400" },
-  { icon: Target, title: "Radical Transparency", description: "The fee, the rate, and the exact amount delivered — visible before you send.", bg: "bg-teal-50 dark:bg-teal-950/30", color: "text-teal-600 dark:text-teal-400" },
-  { icon: Shield, title: "Uncompromised Security", description: "Encryption, compliance, and fraud prevention at every step.", bg: "bg-purple-50 dark:bg-purple-950/30", color: "text-purple-600 dark:text-purple-400" },
-  { icon: Globe, title: "Accessible to Everyone", description: "No bank account or tech degree required. Built for simplicity.", bg: "bg-blue-50 dark:bg-blue-950/30", color: "text-blue-600 dark:text-blue-400" },
-];
 
 const team = [
   { name: "Arjun Patel", role: "CEO & Co-Founder", initials: "AP", bio: "Former VP at Goldman Sachs. 15 years in fintech across 3 continents.", bg: "bg-teal-50 dark:bg-teal-950/30", color: "text-teal-600 dark:text-teal-400" },
@@ -32,10 +16,10 @@ const milestones = [
   { year: "2025", event: "180+ countries. Real-time delivery on most routes. $1B+ volume", bg: "bg-green-50 dark:bg-green-950/30", dot: "bg-green-500" },
 ];
 
-export default function AboutPage() {
+export function AboutSection() {
   return (
-    <>
-      {/* Hero */}
+    <div id="about" className="scroll-mt-20">
+      {/* Header */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-primary/5 py-20 sm:py-28">
         <div className="absolute right-1/4 top-0 h-[400px] w-[400px] rounded-full bg-primary/5 blur-3xl" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -43,15 +27,12 @@ export default function AboutPage() {
             <Badge variant="secondary" className="mb-4 rounded-full px-4 py-1.5">
               Our Story
             </Badge>
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+            <h2 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
               Rethinking How{" "}
               <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
                 Money Moves
               </span>
-            </h1>
-            <p className="mt-6 text-lg text-muted-foreground sm:text-xl">
-              We built DattaPay to make cross-border payments fast, fair, and transparent — by cutting out the middlemen.
-            </p>
+            </h2>
           </div>
         </div>
       </section>
@@ -94,34 +75,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values */}
-      <section className="border-t bg-gradient-to-br from-primary/5 via-background to-primary/5 py-20 sm:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-              What{" "}
-              <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-                Drives Us
-              </span>
-            </h2>
-          </div>
-
-          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {values.map((value) => (
-              <Card key={value.title} className="h-full border-border/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                <CardContent className="p-6">
-                  <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-2xl ${value.bg}`}>
-                    <value.icon className={`h-6 w-6 ${value.color}`} />
-                  </div>
-                  <h3 className="text-lg font-semibold">{value.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{value.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Team */}
       <section className="py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -152,33 +105,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      {/* CTA */}
-      <section className="border-t py-20 sm:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-              Join{" "}
-              <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-                Our Team
-              </span>
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-              Help us make international money transfer fair and fast for everyone.
-            </p>
-            <Button
-              size="lg"
-              className="group mt-10 h-14 rounded-full px-10 text-base font-semibold shadow-lg shadow-primary/20"
-              asChild
-            >
-              <Link href="/contact">
-                See Open Roles{" "}
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-    </>
+    </div>
   );
 }

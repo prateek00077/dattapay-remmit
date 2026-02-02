@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
   Accordion,
@@ -6,8 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import Link from "next/link";
-import { ArrowRight, HelpCircle } from "lucide-react";
+import { HelpCircle } from "lucide-react";
 
 const faqCategories = [
   {
@@ -52,10 +50,10 @@ const faqCategories = [
   },
 ];
 
-export default function FAQPage() {
+export function FAQSection() {
   return (
-    <>
-      {/* Hero */}
+    <div id="faq" className="scroll-mt-20">
+      {/* Header */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-primary/5 py-20 sm:py-28">
         <div className="absolute left-1/2 top-0 h-[300px] w-[300px] -translate-x-1/2 rounded-full bg-primary/5 blur-3xl" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -63,12 +61,12 @@ export default function FAQPage() {
             <Badge variant="secondary" className="mb-4 rounded-full px-4 py-1.5">
               <HelpCircle className="mr-1.5 h-3 w-3" /> FAQ
             </Badge>
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+            <h2 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
               Your Questions,{" "}
               <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
                 Answered
               </span>
-            </h1>
+            </h2>
             <p className="mt-6 text-lg text-muted-foreground sm:text-xl">
               Everything you need to know about sending money with DattaPay.
             </p>
@@ -84,9 +82,9 @@ export default function FAQPage() {
               <div key={category.category}>
                 <div className="mb-4 flex items-center gap-3">
                   <div className={`h-3 w-3 rounded-full ${category.dotColor}`} />
-                  <h2 className={`text-xl font-bold ${category.color}`}>
+                  <h3 className={`text-xl font-bold ${category.color}`}>
                     {category.category}
-                  </h2>
+                  </h3>
                 </div>
                 <Accordion type="single" collapsible className="w-full">
                   {category.questions.map((faq, faqIndex) => (
@@ -105,33 +103,6 @@ export default function FAQPage() {
           </div>
         </div>
       </section>
-
-      {/* CTA */}
-      <section className="border-t py-20 sm:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-              Still Have{" "}
-              <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-                Questions?
-              </span>
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-              Our support team is available 24/7 via chat, email, and phone.
-            </p>
-            <Button
-              size="lg"
-              className="group mt-10 h-14 rounded-full px-10 text-base font-semibold shadow-lg shadow-primary/20"
-              asChild
-            >
-              <Link href="/contact">
-                Talk to Support{" "}
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-    </>
+    </div>
   );
 }

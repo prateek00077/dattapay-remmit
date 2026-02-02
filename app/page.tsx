@@ -1,13 +1,17 @@
 import { Hero } from "@/components/sections/hero";
+import { AboutSection } from "@/components/sections/about-section";
 import { RateComparison } from "@/components/sections/rate-comparison";
-import { CTASection } from "@/components/sections/cta-section";
+import { FAQSection } from "@/components/sections/faq-section";
+import { ContactSection } from "@/components/sections/contact-section";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
+      <AboutSection />
       <RateComparison />
-      <CTASection />
+      <FAQSection />
+      <ContactSection />
     </>
   );
 }

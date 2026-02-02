@@ -59,7 +59,7 @@ export function CTASection() {
               className="group h-14 rounded-full px-10 text-base font-semibold shadow-lg shadow-primary/20"
               asChild
             >
-              <Link href="/contact">
+              <Link href="/#contact">
                 Send Your First Transfer{" "}
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
